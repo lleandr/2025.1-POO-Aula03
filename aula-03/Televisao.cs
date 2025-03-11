@@ -123,7 +123,7 @@ public class Televisao
         }
     }
 
-     public void MudarCanal
+     public void MudarCanal()
     {
         if (alterarCanal >= Canal_min && alterarCanal <= Canal_max)
         {

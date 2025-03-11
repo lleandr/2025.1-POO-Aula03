@@ -133,6 +133,14 @@ public class TelevisaoTest
         Assert.AreEqual(11, televisao.Canal);
     }
 
+    [TestMethod]
+    public void Deve_Ter_Canal_09_Apos_Diminuir_Canal()
+    {
+        Televisao televisao = new Televisao(25f);
+        televisao.DiminuirCanal();
+        Assert.AreEqual(09, televisao.Canal);
+    }
+
 
 
     

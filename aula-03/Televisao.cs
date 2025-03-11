@@ -32,6 +32,7 @@ public class Televisao
     private const int Canal_min = 0;
     private const int Canal_max = 505;
     private const int Canal_pad = 10;
+    private int alterarCanal;
 
     private int _ultimoVolume = VOLUME_PADRAO;
 
@@ -50,15 +51,7 @@ public class Televisao
     public float Tamanho { get; }
     public int Resolucao { get; set; }
     public int Volume { get; private set; }
-    public int Canal{ 
-        get { return _ultimoCanal; }
-        set{
-            if (Canal < Canal_min || Canal > Canal_max)
-            {
-            throw new ArgumentOutOfRangeException($"O Canal ({Canal}) não é suportado!");
-            }
-        }
-    }
+    public int Canal { get; set; }
     public bool Estado { get; set; }
 
     public void AumentarVolume()
@@ -104,7 +97,7 @@ public class Televisao
         }
     }
 
-    public void aumentarCanal()
+    public void AumentarCanal()
     {
         if (Canal < Canal_max)
         {
@@ -117,7 +110,7 @@ public class Televisao
         }
     }
 
-    public void diminuirCanal()
+    public void DiminuirCanal()
     {
         if (Canal > Canal_min)
         {
@@ -129,9 +122,17 @@ public class Televisao
             Console.WriteLine("A tv está no Canal mínimo");
         }
     }
- 
 
- 
-    
-   
+     public void MudarCanal
+    {
+        if (alterarCanal >= Canal_min && alterarCanal <= Canal_max)
+        {
+            _ultimoCanal = Canal;
+            Canal = alterarCanal;
+        }
+        else
+        {
+            Console.WriteLine($"O canal {alterarCanal} não é válido.");
+        }
+    }
 }

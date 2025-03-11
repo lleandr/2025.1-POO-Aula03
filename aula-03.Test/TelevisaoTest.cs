@@ -117,7 +117,14 @@ public class TelevisaoTest
     }
 
     [TestMethod]
-    public void 
+    public void Deve_Criar_Instancia_Com_Canal_10()
+    {
+        const int Canal_pad = 10;
+
+        Televisao televisao = new Televisao(25f);
+        Assert.AreEqual(Canal_pad, televisao.Canal);
+    }
+
 
 
     

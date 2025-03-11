@@ -125,6 +125,14 @@ public class TelevisaoTest
         Assert.AreEqual(Canal_pad, televisao.Canal);
     }
 
+    [TestMethod]
+    public void Deve_Ter_Canal_11_Apos_Aumentar_Canal()
+    {
+        Televisao televisao = new Televisao(25f);
+        televisao.AumentarCanal();
+        Assert.AreEqual(11, televisao.Canal);
+    }
+
 
 
     
